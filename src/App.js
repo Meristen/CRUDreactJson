@@ -1,25 +1,47 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import Header from "./components/Header";
+import MainRoutes from "./routes/MainRoutes";
+import axios from "axios";
 
-function App() {
+const App = () => {
+  const API = "http://localhost:8000/products";
+  const [products, setProducts] = useState([]);
+  const [oneProduct, setOneProduct] = useState(null);
+
+  // ? read
+  async function getProduct() {
+    const { data } = await axios.get(API);
+    setProducts(data);
+  }
+
+  // ? create
+  function addProduct(newProduct) {
+    axios.post(API, newProduct);
+  }
+  // ? update
+  async function getOneProduct(id) {
+    const { data } = await axios.get(`${API}/${id}`);
+    setOneProduct(data);
+  }
+
+  async function updateProduct(id, editedProduct) {
+    await axios.patch(`${API}/${id}`, editedProduct);
+    getProduct();
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Header />
+      <MainRoutes
+        updateProduct={updateProduct}
+        getOneProduct={getOneProduct}
+        oneProduct={oneProduct}
+        getProduct={getProduct}
+        products={products}
+        addProduct={addProduct}
+      />
     </div>
   );
-}
+};
 
 export default App;

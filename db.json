@@ -1,0 +1,32 @@
+{
+  "products": [
+    {
+      "title": "binoklllll",
+      "price": "123",
+      "desc": "okoshko",
+      "image": "https://ru-ru.learn.canva.com/wp-content/uploads/sites/19/2020/07/paul-skorupskas-7KLa-xLbSXA-unsplash-2.jpg",
+      "id": 1
+    },
+    {
+      "title": "mersedes-benz",
+      "price": "60000",
+      "desc": "cars",
+      "image": "https://carsdo.ru/job/CarsDo/photo/model/mercedes-benz-amg-gt-4d-1-model.jpg",
+      "id": 2
+    },
+    {
+      "title": "audu",
+      "price": "50000",
+      "desc": "cars",
+      "image": "https://s.auto.drom.ru/i24243/c/photos/fullsize/audi/rs6/audi_rs6_950265.jpg",
+      "id": 3
+    },
+    {
+      "title": "Maseratti",
+      "price": "20000000",
+      "desc": "sport-car",
+      "image": "https://hips.hearstapps.com/hmg-prod/images/2023-maserati-granturismo-modena-7-1676302719.jpg?crop=0.497xw:0.442xh;0.290xw,0.507xh&resize=1200:*",
+      "id": 4
+    }
+  ]
+}
