@@ -3,10 +3,10 @@ import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
 import { Link } from "react-router-dom";
 
-const MyCard = ({ item }) => {
+const MyCard = ({ item, deleteProduct }) => {
   return (
     <Card style={{ width: "18rem" }}>
-      <Card.Img variant="top" src={item.image} />
+      <Card.Img style={{ height: "280px" }} variant="top" src={item.image} />
       <Card.Body>
         <Card.Title>{item.title}</Card.Title>
         <h3>Price:{item.price}</h3>
@@ -16,7 +16,9 @@ const MyCard = ({ item }) => {
             <Button variant="primary">Edit</Button>
           </Link>
 
-          <Button variant="danger">Delete</Button>
+          <Button onClick={() => deleteProduct(item.id)} variant="danger">
+            Delete
+          </Button>
         </div>
       </Card.Body>
     </Card>

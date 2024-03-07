@@ -28,11 +28,18 @@ const App = () => {
     await axios.patch(`${API}/${id}`, editedProduct);
     getProduct();
   }
+  // ? delete
+
+  async function deleteProduct(id) {
+    await axios.delete(`${API}/${id}`);
+    getProduct();
+  }
 
   return (
     <div>
       <Header />
       <MainRoutes
+        deleteProduct={deleteProduct}
         updateProduct={updateProduct}
         getOneProduct={getOneProduct}
         oneProduct={oneProduct}

@@ -11,12 +11,19 @@ const MainRoutes = ({
   getOneProduct,
   oneProduct,
   updateProduct,
+  deleteProduct,
 }) => {
   return (
     <Routes>
       <Route
         path="/"
-        element={<ProductsList products={products} getProduct={getProduct} />}
+        element={
+          <ProductsList
+            deleteProduct={deleteProduct}
+            products={products}
+            getProduct={getProduct}
+          />
+        }
       />
       <Route path="/add" element={<AddProduct addProduct={addProduct} />} />
       <Route
